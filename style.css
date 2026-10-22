@@ -1,0 +1,124 @@
+:root {
+  --bg-color: #cbb4a3;       /* Warm clay paper tone from your preview */
+  --text-main: #1f1d1b;      /* Charcoal ink */
+  --text-muted: #574c43;     /* Muted earth tone */
+  --accent: #a34e2c;         /* Burnt terracotta */
+  --border-line: rgba(0, 0, 0, 0.12);
+  --font-serif: "Georgia", "Garamond", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  min-height: 100vh;
+  padding: 60px 40px;
+}
+
+/* Two-column layout */
+.layout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+}
+
+/* Left Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 60px;
+  border-right: 1px solid var(--border-line);
+  padding-right: 32px;
+}
+
+.site-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 0.12em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 30px;
+}
+
+/* Navigation tabs */
+.nav-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tab {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+
+.tab.active,
+.tab:hover {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.sidebar-footer .bio {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.sidebar-footer .copyright {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Right Content Area */
+.reading-feed {
+  padding-top: 10px;
+  max-width: 580px;
+}
+
+article.poem {
+  margin-bottom: 80px;
+}
+
+h2.poem-title {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.poem-date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.poem-body {
+  white-space: pre-wrap;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--text-main);
+}
